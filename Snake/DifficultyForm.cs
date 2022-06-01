@@ -16,5 +16,25 @@ namespace Snake
         {
             InitializeComponent();
         }
+
+        private void DifficultyForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private void easyButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mediumButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hardButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

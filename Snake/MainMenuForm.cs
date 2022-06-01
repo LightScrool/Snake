@@ -15,6 +15,27 @@ namespace Snake
         public MainMenuForm()
         {
             InitializeComponent();
+            label1.Font = Program.mainFont;
+            startButton.Font = Program.mainFont;
+            recordsButton.Font = Program.mainFont;
+            exitButton.Font = Program.mainFont;
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DifficultyForm difficultyForm = new DifficultyForm();
+            difficultyForm.Show();
+        }
+
+        private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
     }
 }

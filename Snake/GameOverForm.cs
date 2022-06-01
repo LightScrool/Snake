@@ -16,5 +16,10 @@ namespace Snake
         {
             InitializeComponent();
         }
+
+        private void GameOverForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
     }
 }

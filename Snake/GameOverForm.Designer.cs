@@ -39,7 +39,7 @@
             this.panel1.Size = new System.Drawing.Size(700, 500);
             this.panel1.TabIndex = 0;
             // 
-            // MainMenuForm
+            // GameOverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -47,8 +47,10 @@
             this.ClientSize = new System.Drawing.Size(720, 520);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MainMenuForm";
-            this.Text = "Form1";
+            this.Name = "GameOverForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Snake";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GameOverForm_FormClosing);
             this.ResumeLayout(false);
 
         }
