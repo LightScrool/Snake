@@ -12,3 +12,5 @@ D:\Programming\Snake\Snake\obj\Debug\Snake.csproj.GenerateResource.cache
 D:\Programming\Snake\Snake\obj\Debug\Snake.csproj.CoreCompileInputs.cache
 D:\Programming\Snake\Snake\obj\Debug\Snake.exe
 D:\Programming\Snake\Snake\obj\Debug\Snake.pdb
+D:\Programming\Snake\Snake\bin\Debug\data\records.txt
+D:\Programming\Snake\Snake\bin\Debug\data\Showcard Gothic.ttf

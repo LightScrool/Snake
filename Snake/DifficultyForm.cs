@@ -15,6 +15,9 @@ namespace Snake
         public DifficultyForm()
         {
             InitializeComponent();
+            easyButton.Font = Data.MainFont;
+            mediumButton.Font = Data.MainFont;
+            hardButton.Font = Data.MainFont;
         }
 
         private void DifficultyForm_FormClosing(object sender, FormClosingEventArgs e)
