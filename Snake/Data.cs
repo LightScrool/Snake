@@ -18,7 +18,7 @@ namespace Snake
         private static Color headColor = Color.FromArgb(188, 185, 114); // #BCB972;
         private static Color bodyColor = Color.FromArgb(237, 233, 176); // #EDE9B0;
         private static Color appleColor = Color.FromArgb(144, 71, 28); // #90471C;
-        private static int[] snakeSpeedVariant = {8, 16, 24};
+        private static int[] snakeSpeedVariants = {8, 16, 24};
         private static int startSnakeLength = 3;
         private static int appleNumber = 3;
 
@@ -26,7 +26,7 @@ namespace Snake
         public static Color HeadColor { get => headColor; }
         public static Color BodyColor { get => bodyColor; }
         public static Color AppleColor { get => appleColor; }
-        public static int[] SnakeSpeeds { get => snakeSpeedVariant; }
+        public static int[] SnakeSpeedVariants { get => snakeSpeedVariants; }
         public static int StartSnakeLength { get => startSnakeLength; }
         public static int AppleNumber { get => appleNumber; }
 
@@ -42,9 +42,6 @@ namespace Snake
         public static int GamePanelHeight { get => gamePanelHeight; }
         public static int BlockWidth { get => blockWidth; }
         public static int BlockHeight { get => blockHeight; }
-
-        // Свободно изменяемые поля
-        public static int SnakeSpeed { get; set; }
 
         // Методы
         public static void LoadFont()

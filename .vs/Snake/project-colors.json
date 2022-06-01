@@ -5,7 +5,12 @@
       "ProjectGuid": "e7d80457-f4f6-4f90-9086-d3c68321f55c",
       "DisplayName": "Snake",
       "ColorIndex": 0
+    },
+    "7bb43d4f-a85d-4609-a45a-ea1645ec0d0d": {
+      "ProjectGuid": "7bb43d4f-a85d-4609-a45a-ea1645ec0d0d",
+      "DisplayName": "data",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

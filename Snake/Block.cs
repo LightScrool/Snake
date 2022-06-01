@@ -33,14 +33,19 @@ namespace Snake
             }
         }
 
-        public Block(int _x, int _y, Panel gamePanel, System.Drawing.Color color)
+        public Block(int _x, int _y, System.Drawing.Color color)
         {
-            gamePanel.Controls.Add(this);
+            CurrentGameData.GamePanel.Controls.Add(this);
 
             this.Size = new System.Drawing.Size(Data.BlockWidth, Data.BlockHeight);
             this.BackColor = color;
             X = _x;
             Y = _y;
+        }
+
+        public void DestructBlock()
+        {
+            CurrentGameData.GamePanel.Controls.Remove(this);
         }
 
         public new void Move(string direction)

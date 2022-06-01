@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,14 +13,18 @@ namespace Snake
 {
     public partial class GameForm : Form
     {
-        private Block a;
-
         public GameForm()
         {
             InitializeComponent();
-            Data.InitSizes(gamePanel);
             this.Controls.Add(gamePanel);
-            a = new Block(1, 1, gamePanel, Data.BodyColor);
+            Data.InitSizes(gamePanel);
+            CurrentGameData.GamePanel = gamePanel;
+
+            CurrentGameData.SnakeSpeed = Data.SnakeSpeedVariants[0];
+            CurrentGameData.CurrentSnake = new Snake();
+            CurrentGameData.GenerateApples();
+
+
         }
 
         private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -29,7 +34,8 @@ namespace Snake
 
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            a.Move(e.KeyData.ToString());
+            CurrentGameData.CurrentSnake.Direction = e.KeyData.ToString();
+            CurrentGameData.CurrentSnake.Move();
         }
     }
 }
