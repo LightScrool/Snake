@@ -15,14 +15,10 @@ namespace Snake
         public DifficultyForm()
         {
             InitializeComponent();
+            FormClosing += new FormClosingEventHandler(Program.OnFormClosing);
             easyButton.Font = Data.GetMainFont();
             mediumButton.Font = Data.GetMainFont();
             hardButton.Font = Data.GetMainFont();
-        }
-
-        private void DifficultyForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
         private void easyButton_Click(object sender, EventArgs e)

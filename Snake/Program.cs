@@ -14,9 +14,16 @@ namespace Snake
         [STAThread]
         private static void Main()
         {
+            Data.LoadRecords();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenuForm());
+        }
+
+        public static void OnFormClosing(object sender, FormClosingEventArgs e)
+        {
+            Data.SaveRecords();
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
     }
 }

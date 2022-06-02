@@ -15,15 +15,11 @@ namespace Snake
         public MainMenuForm()
         {
             InitializeComponent();
-            label1.Font = Data.GetMainFont();
+            FormClosing += new FormClosingEventHandler(Program.OnFormClosing);
+            titleLabel.Font = Data.GetMainFont();
             startButton.Font = Data.GetMainFont();
             recordsButton.Font = Data.GetMainFont();
             exitButton.Font = Data.GetMainFont();
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -33,9 +29,16 @@ namespace Snake
             difficultyForm.Show();
         }
 
-        private void MainMenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void recordsButton_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            this.Hide();
+            RecordsForm recordsForm = new RecordsForm();
+            recordsForm.Show();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

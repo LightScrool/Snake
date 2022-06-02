@@ -32,7 +32,7 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.recordsButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +42,7 @@
             this.panel1.Controls.Add(this.exitButton);
             this.panel1.Controls.Add(this.recordsButton);
             this.panel1.Controls.Add(this.startButton);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.titleLabel);
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(700, 500);
@@ -76,6 +76,7 @@
             this.recordsButton.TabIndex = 2;
             this.recordsButton.Text = "My records";
             this.recordsButton.UseVisualStyleBackColor = false;
+            this.recordsButton.Click += new System.EventHandler(this.recordsButton_Click);
             // 
             // startButton
             // 
@@ -92,17 +93,17 @@
             this.startButton.UseVisualStyleBackColor = false;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(109)))));
-            this.label1.Location = new System.Drawing.Point(79, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(562, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "WELCOME TO THE SNAKE GAME";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Showcard Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(184)))), ((int)(((byte)(109)))));
+            this.titleLabel.Location = new System.Drawing.Point(79, 50);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(562, 46);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "WELCOME TO THE SNAKE GAME";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainMenuForm
             // 
@@ -115,7 +116,6 @@
             this.Name = "MainMenuForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Snake";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainMenuForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -125,7 +125,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button recordsButton;
         private System.Windows.Forms.Button startButton;

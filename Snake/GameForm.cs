@@ -15,6 +15,8 @@ namespace Snake
         public GameForm()
         {
             InitializeComponent();
+            FormClosing += new FormClosingEventHandler(Program.OnFormClosing);
+
             this.Controls.Add(gamePanel);
             Data.InitSizes(gamePanel);
             CurrentGameData.GamePanel = gamePanel;
@@ -36,15 +38,11 @@ namespace Snake
             {
                 timer.Stop();
                 CurrentGameData.AppleList = new List<Block>();
+                Data.AddScoreToRecords(CurrentGameData.Score);
                 this.Hide();
                 GameOverForm gameOverForm = new GameOverForm();
                 gameOverForm.Show();
             }
-        }
-
-        private void GameForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
