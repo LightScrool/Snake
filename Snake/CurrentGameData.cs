@@ -9,11 +9,24 @@ namespace Snake
 {
     internal static class CurrentGameData
     {
+        private static int score;
+
         public static List<Block> AppleList { get; set; }
-        public static int Score { get; set; }
+        public static int Score
+        {
+            get => score;
+            set
+            {
+                score = value;
+                if (ScoreLabel != null)
+                    ScoreLabel.Text = $"Score: {value}";
+            }
+        }
         public static Snake CurrentSnake { get; set; }
         public static Panel GamePanel { get; set; }
+        public static Label ScoreLabel { get; set; }
         public static int SnakeSpeed { get; set; }
+
         public static void GenerateApples()
         {
             if (CurrentGameData.AppleList == null)

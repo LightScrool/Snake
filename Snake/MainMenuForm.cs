@@ -15,10 +15,10 @@ namespace Snake
         public MainMenuForm()
         {
             InitializeComponent();
-            label1.Font = Data.MainFont;
-            startButton.Font = Data.MainFont;
-            recordsButton.Font = Data.MainFont;
-            exitButton.Font = Data.MainFont;
+            label1.Font = Data.GetMainFont();
+            startButton.Font = Data.GetMainFont();
+            recordsButton.Font = Data.GetMainFont();
+            exitButton.Font = Data.GetMainFont();
         }
 
         private void exitButton_Click(object sender, EventArgs e)

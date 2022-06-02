@@ -15,11 +15,28 @@ namespace Snake
         public GameOverForm()
         {
             InitializeComponent();
+            titleLable.Font = Data.GetMainFont();
+            scoreLabel.Font = Data.GetMainFont(18);
+            scoreLabel.Text = $"Your score: {CurrentGameData.Score}";
         }
 
         private void GameOverForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        private void restartButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GameForm gameForm = new GameForm();
+            gameForm.Show();
+        }
+
+        private void mainMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainMenuForm mainMenuForm = new MainMenuForm();
+            mainMenuForm.Show();
         }
     }
 }

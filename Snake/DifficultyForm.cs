@@ -15,9 +15,9 @@ namespace Snake
         public DifficultyForm()
         {
             InitializeComponent();
-            easyButton.Font = Data.MainFont;
-            mediumButton.Font = Data.MainFont;
-            hardButton.Font = Data.MainFont;
+            easyButton.Font = Data.GetMainFont();
+            mediumButton.Font = Data.GetMainFont();
+            hardButton.Font = Data.GetMainFont();
         }
 
         private void DifficultyForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -27,17 +27,26 @@ namespace Snake
 
         private void easyButton_Click(object sender, EventArgs e)
         {
-
+            CurrentGameData.SnakeSpeed = Data.SnakeSpeedVariants[0];
+            this.Hide();
+            GameForm gameForm = new GameForm();
+            gameForm.Show();
         }
 
         private void mediumButton_Click(object sender, EventArgs e)
         {
-
+            CurrentGameData.SnakeSpeed = Data.SnakeSpeedVariants[1];
+            this.Hide();
+            GameForm gameForm = new GameForm();
+            gameForm.Show();
         }
 
         private void hardButton_Click(object sender, EventArgs e)
         {
-
+            CurrentGameData.SnakeSpeed = Data.SnakeSpeedVariants[2];
+            this.Hide();
+            GameForm gameForm = new GameForm();
+            gameForm.Show();
         }
     }
 }

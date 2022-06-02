@@ -11,6 +11,7 @@ namespace Snake
     {
         private List<Block> blockList = new List<Block>();
         private string direction;
+        private bool isAlive;
 
         public int Length { get => blockList.Count; }
 
@@ -38,17 +39,20 @@ namespace Snake
             }
         }
 
+        public bool IsAlive { get => isAlive;}
+
         public Snake()
         {
+            isAlive = true;
             Direction = "Right";
 
             int y = Data.BlocksInField / 2;
-            int x = (Data.BlocksInField - Data.StartSnakeLength) / 2;
-            blockList.Add(new Block(x, y, Data.HeadColor));
+            int x = (Data.BlocksInField - Data.StartSnakeLength) / 2 + Data.StartSnakeLength / 2;
+            blockList.Add(new Block(x--, y, Data.HeadColor));
 
-            for (x--; x >= 0; x--)
+            for (int i = 1; i < Data.StartSnakeLength; i++)
             {
-                blockList.Add(new Block(x, y, Data.BodyColor));
+                blockList.Add(new Block(x--, y, Data.BodyColor));
             }
         }
 
@@ -85,7 +89,7 @@ namespace Snake
 
             int lastHeadCoords = blockList.FindLastIndex(block => block.X == head.X && block.Y == head.Y);
             
-            bool snakeIsEaten = wallsCheck && (lastHeadCoords != 0); //TODO: Смерть змеи
+            isAlive = wallsCheck && (lastHeadCoords == 0);
         }
 
         public void EatAppleCheck()
@@ -94,7 +98,7 @@ namespace Snake
                 return;
 
             // В отличие от SelfEatenCheck, съедение яблок проверяется по хвосту, а не по голове змейки
-                int tailIndex = blockList.Count - 1;
+            int tailIndex = blockList.Count - 1;
             int tailX = blockList[tailIndex].X;
             int tailY = blockList[tailIndex].Y;
 
